@@ -213,6 +213,9 @@
     .price { font-family: var(--f-display); font-stretch: 78%; font-weight: 900; font-size: clamp(4.2rem, 11vw, 6.2rem); line-height: .9; letter-spacing: -.01em; }
     .price sup { font-size: .34em; vertical-align: top; position: relative; top: .5em; margin-right: 6px; font-weight: 800; color: var(--orange); }
     .price-note { margin: 12px 0 34px; color: var(--muted); font-weight: 500; }
+    .pay-opts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -18px 0 30px; }
+    .pay-opt { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .85rem; font-weight: 600; }
+    .pay-opt .ico { width: 16px; height: 16px; color: var(--orange); }
     .perks { display: grid; gap: 12px; text-align: left; padding: 28px 0 34px; border-top: 1px dashed var(--line); margin-bottom: 4px; }
     .perks li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
     .perks .chk { background: var(--orange-soft); color: var(--orange-dark); }
@@ -363,6 +366,8 @@
   <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Zm4 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
   <symbol id="i-bank" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M2 10l10-7 10 7H2Z"/></symbol>
   <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5l-8.4 8.4a2.1 2.1 0 0 1-3-3l8.4-8.4a4 4 0 0 1-2-2Zm0 0 3-3"/></symbol>
+  <symbol id="i-pix" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5 21.5 12 12 21.5 2.5 12z"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7.5 9.5 12 14l4.5-4.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M2.5 10h19M6 15h4"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-15v5l3 2"/></symbol>
 </svg>
@@ -468,6 +473,31 @@
   </div>
 </section>
 
+<!-- INVESTIMENTO -->
+<section id="investimento">
+  <div class="container">
+    <div class="invest-card reveal">
+      <span class="invest-tag">Matrícula completa</span>
+      <p class="invest-lbl">Investimento</p>
+      <p class="price"><sup>R$</sup>800</p>
+      <p class="price-note">à vista no Pix ou em até <strong>10x de R$ 80</strong> sem juros no cartão</p>
+      <div class="pay-opts">
+        <span class="pay-opt"><svg class="ico"><use href="#i-pix"/></svg> Pix</span>
+        <span class="pay-opt"><svg class="ico"><use href="#i-card"/></svg> Cartão de crédito · 10x sem juros</span>
+      </div>
+      <ul class="perks">
+        <li><span class="chk">✓</span><span>Receba seu diploma em <strong>até 7 dias</strong></span></li>
+        <li><span class="chk">✓</span>Diploma e Histórico Escolar reconhecidos pelo MEC</li>
+        <li><span class="chk">✓</span>Processo 100% online, sem burocracia</li>
+        <li><span class="chk">✓</span>Acompanhamento completo da nossa equipe</li>
+        <li><span class="chk">✓</span>Atendimento 7 dias por semana, resposta em até 1h</li>
+      </ul>
+      <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20me%20matricular%20no%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-wa"/></svg> Quero me matricular agora</a>
+      <p class="invest-safe"><svg class="ico"><use href="#i-lock"/></svg> Atendimento direto com a nossa equipe pelo WhatsApp</p>
+    </div>
+  </div>
+</section>
+
 <!-- DEPOIMENTO -->
 <section id="depoimento">
   <div class="container depo-grid">
@@ -525,25 +555,6 @@
   </div>
 </section>
 
-<!-- INVESTIMENTO -->
-<section id="investimento">
-  <div class="container">
-    <div class="invest-card reveal">
-      <span class="invest-tag">Valor único</span>
-      <p class="invest-lbl">Investimento</p>
-      <p class="price"><sup>R$</sup>1.500</p>
-      <p class="price-note">Pagamento único — sem mensalidades</p>
-      <ul class="perks">
-        <li><span class="chk">✓</span>Diploma e Histórico Escolar reconhecidos pelo MEC</li>
-        <li><span class="chk">✓</span>Processo 100% online, sem burocracia</li>
-        <li><span class="chk">✓</span>Acompanhamento completo da nossa equipe</li>
-        <li><span class="chk">✓</span>Atendimento 7 dias por semana, resposta em até 1h</li>
-      </ul>
-      <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20me%20matricular%20no%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-wa"/></svg> Quero me matricular agora</a>
-      <p class="invest-safe"><svg class="ico"><use href="#i-lock"/></svg> Atendimento direto com a nossa equipe pelo WhatsApp</p>
-    </div>
-  </div>
-</section>
 
 <!-- CERTIFICADO -->
 <section id="certificado">
@@ -577,10 +588,10 @@
     </div>
     <div class="faq-list">
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">O certificado é reconhecido pelo MEC?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Sim. O diploma e o histórico escolar emitidos pela instituição certificadora parceira são reconhecidos pelo Ministério da Educação (MEC) e possuem validade em todo o território nacional. São aceitos em concursos públicos, faculdades públicas e privadas, e também por instituições no exterior.</p></div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Quanto tempo leva para concluir?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>O Supletivo da Conquista Educação é o método mais ágil do Brasil para concluir o Ensino Médio. O processo é direto e sem burocracia — desenvolvido especialmente para quem quer resolver isso o quanto antes. Entre em contato pelo WhatsApp e nossos consultores vão te orientar sobre os próximos passos.</p></div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Quanto tempo leva para concluir?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>O Supletivo da Conquista Educação é o método mais ágil do Brasil para concluir o Ensino Médio. Depois da matrícula, você recebe seu diploma em até 7 dias. Entre em contato pelo WhatsApp e nossos consultores vão te orientar sobre os próximos passos.</p></div></div></div>
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Preciso ir presencialmente em algum momento?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Não. Todo o processo é realizado de forma 100% online. Desde a matrícula até a conclusão, você não precisa comparecer a nenhuma instituição presencialmente. Tudo acontece de onde você estiver, pelo celular ou computador.</p></div></div></div>
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Quem pode fazer o supletivo?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Qualquer pessoa que tenha concluído o Ensino Fundamental (9º ano) pode se matricular. Atendemos alunos de todo o Brasil, independentemente da faixa etária ou do tempo que ficou fora da escola.</p></div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Como funciona o pagamento?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Fale com um de nossos consultores pelo WhatsApp para receber todas as informações sobre valores e condições de pagamento. O atendimento é rápido e sem compromisso.</p></div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Como funciona o pagamento?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>O investimento é de R$ 800. Você pode pagar à vista no Pix ou parcelar no cartão de crédito em até 10x de R$ 80, sem juros. Para se matricular, é só chamar nossa equipe no WhatsApp.</p></div></div></div>
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Posso usar o diploma para fazer faculdade ou concurso público?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Sim. O diploma de Ensino Médio reconhecido pelo MEC é aceito em faculdades públicas e privadas, concursos públicos municipais, estaduais e federais, cursos técnicos e processos seletivos que exijam o nível médio de escolaridade.</p></div></div></div>
     </div>
   </div>
