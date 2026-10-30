@@ -213,6 +213,11 @@
     .price { font-family: var(--f-display); font-stretch: 78%; font-weight: 900; font-size: clamp(4.2rem, 11vw, 6.2rem); line-height: .9; letter-spacing: -.01em; }
     .price sup { font-size: .34em; vertical-align: top; position: relative; top: .5em; margin-right: 6px; font-weight: 800; color: var(--orange); }
     .price-note { margin: 12px 0 34px; color: var(--muted); font-weight: 500; }
+    .price-old { margin: 4px 0 2px; color: var(--muted); font-weight: 600; font-size: 1rem; }
+    .price-old s { text-decoration-thickness: 2px; }
+    .pay-opts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -18px 0 30px; }
+    .pay-opt { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .85rem; font-weight: 600; }
+    .pay-opt .ico { width: 16px; height: 16px; color: var(--orange); }
     .perks { display: grid; gap: 12px; text-align: left; padding: 28px 0 34px; border-top: 1px dashed var(--line); margin-bottom: 4px; }
     .perks li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
     .perks .chk { background: var(--orange-soft); color: var(--orange-dark); }
@@ -391,6 +396,8 @@
   <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Zm4 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
   <symbol id="i-bank" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M2 10l10-7 10 7H2Z"/></symbol>
   <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5l-8.4 8.4a2.1 2.1 0 0 1-3-3l8.4-8.4a4 4 0 0 1-2-2Zm0 0 3-3"/></symbol>
+  <symbol id="i-pix" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5 21.5 12 12 21.5 2.5 12z"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7.5 9.5 12 14l4.5-4.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M2.5 10h19M6 15h4"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-15v5l3 2"/></symbol>
   <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5Z"/></symbol>
@@ -525,8 +532,13 @@
     <div class="invest-card reveal">
       <span class="invest-tag">Curso TTI</span>
       <p class="invest-lbl">Investimento</p>
-      <p class="price"><sup>R$</sup>2.500</p>
-      <p class="price-note">Fale com a equipe sobre as condições de pagamento</p>
+      <p class="price-old">de <s>R$ 2.500</s> por</p>
+      <p class="price"><sup>R$</sup>1.097</p>
+      <p class="price-note">à vista no Pix ou em até <strong>12x de R$ 91,42</strong> sem juros no cartão</p>
+      <div class="pay-opts">
+        <span class="pay-opt"><svg class="ico"><use href="#i-pix"/></svg> Pix</span>
+        <span class="pay-opt"><svg class="ico"><use href="#i-card"/></svg> Cartão de crédito · 12x sem juros</span>
+      </div>
       <ul class="perks">
         <li><span class="chk">✓</span>Diploma de Técnico reconhecido pelo MEC</li>
         <li><span class="chk">✓</span>Habilita o registro no CRECI</li>
@@ -581,7 +593,7 @@
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Preciso ter o Ensino Médio completo?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Sim, o Ensino Médio completo é obrigatório. Se você ainda não concluiu, pode fazer primeiro o <a href="/" style="color:var(--orange-dark);font-weight:700">Supletivo da Conquista Educação</a>, 100% online.</p></div></div></div>
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">O curso é todo online?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Sim. Todo o processo acontece de forma 100% online, pelo celular ou computador, sem precisar ir a nenhuma instituição.</p></div></div></div>
       <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Quanto tempo leva para concluir?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>O processo é rápido e sem burocracia. Fale com nossa equipe pelo WhatsApp para receber a orientação sobre os próximos passos no seu caso.</p></div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Como funciona o pagamento?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>Fale com um de nossos consultores pelo WhatsApp para receber todas as informações sobre condições de pagamento. O atendimento é rápido e sem compromisso.</p></div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Como funciona o pagamento?<span class="faq-x" aria-hidden="true"></span></button><div class="faq-a"><div><p>O curso sai de R$ 2.500 por R$ 1.097. Você pode pagar à vista no Pix ou parcelar no cartão de crédito em até 12x de R$ 91,42, sem juros. Para se matricular, é só chamar nossa equipe no WhatsApp.</p></div></div></div>
     </div>
   </div>
 </section>
