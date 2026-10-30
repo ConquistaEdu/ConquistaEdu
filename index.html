@@ -32,6 +32,7 @@
       --py: clamp(72px, 9vw, 112px);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    #investimento { scroll-margin-top: 64px; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     html, body { overflow-x: clip; }
     body { font-family: var(--f-body); color: var(--ink); background: var(--paper); overflow-x: hidden; line-height: 1.6; }
@@ -213,6 +214,10 @@
     .price { font-family: var(--f-display); font-stretch: 78%; font-weight: 900; font-size: clamp(4.2rem, 11vw, 6.2rem); line-height: .9; letter-spacing: -.01em; }
     .price sup { font-size: .34em; vertical-align: top; position: relative; top: .5em; margin-right: 6px; font-weight: 800; color: var(--orange); }
     .price-note { margin: 12px 0 34px; color: var(--muted); font-weight: 500; }
+    .parcela { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 8px; margin: 16px 0 0; padding: 12px 20px; border-radius: 16px; background: var(--orange-soft); color: var(--orange-dark); font-weight: 600; }
+    .parcela strong { font-family: var(--f-display); font-stretch: 85%; font-weight: 900; font-size: clamp(1.6rem, 5vw, 2rem); line-height: 1; letter-spacing: .01em; }
+    .parcela-ou, .parcela-obs { font-size: .95rem; }
+    .parcela + .price-note { margin-top: 10px; font-size: .9rem; }
     .pay-opts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -18px 0 30px; }
     .pay-opt { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .85rem; font-weight: 600; }
     .pay-opt .ico { width: 16px; height: 16px; color: var(--orange); }
@@ -368,6 +373,7 @@
   <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5l-8.4 8.4a2.1 2.1 0 0 1-3-3l8.4-8.4a4 4 0 0 1-2-2Zm0 0 3-3"/></symbol>
   <symbol id="i-pix" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5 21.5 12 12 21.5 2.5 12z"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7.5 9.5 12 14l4.5-4.5"/></symbol>
   <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M2.5 10h19M6 15h4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m-6-6 6 6 6-6"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-15v5l3 2"/></symbol>
 </svg>
@@ -393,7 +399,7 @@
       <a href="#certificado">Certificado</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange nav-cta"><svg class="ico"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+    <a href="#investimento" class="btn btn-orange nav-cta"><svg class="ico"><use href="#i-down"/></svg> Ver valores</a>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="mob" id="mob">
@@ -402,7 +408,7 @@
     <a href="#investimento">Investimento</a>
     <a href="#certificado">Certificado</a>
     <a href="#faq">FAQ</a>
-    <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange"><svg class="ico"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+    <a href="#investimento" class="btn btn-orange"><svg class="ico"><use href="#i-down"/></svg> Ver valores e parcelas</a>
   </div>
 </nav>
 
@@ -414,7 +420,7 @@
       <h1 class="hero-title reveal d1">Conclua o Ensino Médio <em>sem sair de casa.</em></h1>
       <p class="hero-sub reveal d2">O método mais rápido do Brasil para concluir o Ensino Médio. Diploma e histórico escolar reconhecidos pelo MEC — sem burocracia, sem complicação.</p>
       <div class="hero-actions reveal d3">
-        <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+        <a href="#investimento" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-down"/></svg> Ver valores e parcelas</a>
         <a href="#como-funciona" class="btn btn-ghost btn-lg">Saiba mais</a>
       </div>
       <div class="stats reveal d4">
@@ -480,7 +486,8 @@
       <span class="invest-tag">Matrícula completa</span>
       <p class="invest-lbl">Investimento</p>
       <p class="price"><sup>R$</sup>800</p>
-      <p class="price-note">à vista no Pix ou em até <strong>10x de R$ 80</strong> sem juros no cartão</p>
+      <p class="parcela"><span class="parcela-ou">ou</span> <strong>10x de R$ 80</strong> <span class="parcela-obs">sem juros no cartão</span></p>
+      <p class="price-note">R$ 800 à vista no Pix · total no cartão R$ 800</p>
       <div class="pay-opts">
         <span class="pay-opt"><svg class="ico"><use href="#i-pix"/></svg> Pix</span>
         <span class="pay-opt"><svg class="ico"><use href="#i-card"/></svg> Cartão de crédito · 10x sem juros</span>
@@ -492,7 +499,7 @@
         <li><span class="chk">✓</span>Acompanhamento completo da nossa equipe</li>
         <li><span class="chk">✓</span>Atendimento 7 dias por semana, resposta em até 1h</li>
       </ul>
-      <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20me%20matricular%20no%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-wa"/></svg> Quero me matricular agora</a>
+      <a href="https://wa.me/555192597468?text=Ol%C3%A1%21%20Vim%20atrav%C3%A9s%20do%20site%20e%20tenho%20interesse%20em%20me%20matricular%20no%20Supletivo." target="_blank" rel="noopener" class="btn btn-orange btn-lg"><svg class="ico"><use href="#i-wa"/></svg> Quero me matricular agora</a>
       <p class="invest-safe"><svg class="ico"><use href="#i-lock"/></svg> Atendimento direto com a nossa equipe pelo WhatsApp</p>
     </div>
   </div>
@@ -511,7 +518,7 @@
       <p class="eyebrow reveal">Depoimento</p>
       <h2 class="h2 reveal d1">Quem fez, <em>recomenda</em></h2>
       <p class="lead reveal d2">Veja o relato de quem já passou pela Conquista Educação.</p>
-      <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg reveal d3"><svg class="ico"><use href="#i-wa"/></svg> Quero o meu também</a>
+      <a href="#investimento" class="btn btn-orange btn-lg reveal d3"><svg class="ico"><use href="#i-down"/></svg> Quero o meu também</a>
     </div>
   </div>
 </section>
@@ -529,7 +536,7 @@
       <h2 class="h2 reveal">Mais oportunidades começam com o <em>Ensino Médio concluído</em></h2>
       <p class="lead reveal d1">Muitas vagas de emprego, concursos públicos, cursos técnicos e faculdades exigem a conclusão do Ensino Médio. Dê o próximo passo na sua trajetória.</p>
     </div>
-    <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20falar%20com%20um%20consultor%20do%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-dark btn-lg reveal d2"><svg class="ico"><use href="#i-wa"/></svg> Falar com um consultor</a>
+    <a href="#investimento" class="btn btn-dark btn-lg reveal d2"><svg class="ico"><use href="#i-down"/></svg> Ver condições de pagamento</a>
   </div>
 </section>
 
@@ -573,7 +580,7 @@
         <span class="badge"><span class="chk">✓</span>Aceito em Faculdades</span>
         <span class="badge"><span class="chk">✓</span>Concursos Públicos</span>
       </div>
-      <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20tenho%20d%C3%BAvidas%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-orange btn-lg reveal d4"><svg class="ico"><use href="#i-wa"/></svg> Tirar minhas dúvidas agora</a>
+      <a href="#investimento" class="btn btn-orange btn-lg reveal d4"><svg class="ico"><use href="#i-down"/></svg> Ver valores e parcelas</a>
     </div>
   </div>
 </section>
@@ -603,7 +610,7 @@
     <p class="eyebrow reveal">Comece hoje</p>
     <h2 class="cta-title reveal d1">Seu diploma está a uma mensagem de distância.</h2>
     <p class="cta-sub reveal d2">Fale com a nossa equipe agora e tire todas as suas dúvidas sem compromisso. A matrícula é rápida e o acesso é imediato.</p>
-    <a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-dark btn-lg reveal d3"><svg class="ico"><use href="#i-wa"/></svg> Falar agora no WhatsApp</a>
+    <a href="#investimento" class="btn btn-dark btn-lg reveal d3"><svg class="ico"><use href="#i-down"/></svg> Ver valores e me matricular</a>
   </div>
 </section>
 
@@ -628,7 +635,6 @@
       <div class="ft-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="/politica">Política de Transparência</a></li>
         </ul>
       </div>
@@ -640,7 +646,6 @@
   </div>
 </footer>
 
-<a href="https://wa.me/555192597468?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20quero%20saber%20mais%20sobre%20o%20Supletivo%20da%20Conquista%20Educa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp"><svg class="ico"><use href="#i-wa"/></svg><span>Fale conosco</span></a>
 
 <script>
 (function () {
